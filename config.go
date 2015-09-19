@@ -21,6 +21,8 @@ var (
 // loadConfig loads data from yml file to config struct
 func loadConfig() {
 
+	var err error
+
 	// get config file location from flag, or use default one
 	flag.StringVar(&cfgFile, "configFile", cfgFile, "http server listening port")
 	flag.Parse()
@@ -29,5 +31,8 @@ func loadConfig() {
 	if err != nil {
 		log.Fatalf("error while reading cfg file: %v", err)
 	}
-	yaml.Unmarshal(data, &cfg)
+	err = yaml.Unmarshal(data, &cfg)
+	if err != nil {
+		log.Fatal("error while unmarshalling config file:", err)
+	}
 }
