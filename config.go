@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"log"
@@ -10,13 +11,22 @@ import (
 // struct holding whole config data
 type config struct {
 	Port int `yaml:"port"` // HTTP port to listen for requests
+	DB   `yaml:"db"`
 }
 
-// global variables that hold config related data
-var (
-	cfg     *config
-	cfgFile = "./config.yml" // default path to config file
-)
+// DB holds data for connection to db
+type DB struct {
+	DBname     string `yaml:"dbName"`
+	Password   string `yaml:"password"`
+	Host       string `yaml:"host"`
+	User       string `yaml:"user"`
+	connString string
+}
+
+// methos that creates database string based on struct data
+func (db *DB) setConnString() {
+	db.connString = fmt.Sprintf("host=%s password=%s dbname=%s user=%s", db.Host, db.Password, db.DBname, db.User)
+}
 
 // loadConfig loads data from yml file to config struct
 func loadConfig() {
@@ -35,4 +45,7 @@ func loadConfig() {
 	if err != nil {
 		log.Fatal("error while unmarshalling config file:", err)
 	}
+
+	cfg.DB.setConnString()
+
 }
