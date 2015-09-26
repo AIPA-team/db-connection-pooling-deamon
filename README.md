@@ -9,6 +9,18 @@ Initially it supports postgres. MySQL and other databases are work in progress.
 
 This is for sure not finished and production-ready code!
 
+## How to use:
+
+- config config.yml
+- build and run the daemon
+- call it's `/query` url with json structured as follows:
+```json
+{  
+  "query": "SELECT * from test where name = $1 and lastname = $2",  
+  "params": ["jack", "black"]  
+}
+```
+
 ## TODO:
 - jwt/basic auth authentification
 - mysql support
