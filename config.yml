@@ -1,1 +1,6 @@
 port: 7000
+db:
+    dbName: "test"
+    password: "test"
+    host: "localhost"
+    user: "test"
