@@ -4,3 +4,5 @@ db:
     password: "test"
     host: "localhost"
     user: "test"
+    poolMin: 2
+    poolMax: 20

@@ -20,6 +20,8 @@ type DB struct {
 	Password   string `yaml:"password"`
 	Host       string `yaml:"host"`
 	User       string `yaml:"user"`
+	PoolMin    int    `yaml:"poolMin"`
+	PoolMax    int    `yaml:"poolMax"`
 	connString string
 }
 
