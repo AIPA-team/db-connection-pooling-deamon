@@ -30,6 +30,9 @@ func main() {
 		panic(err)
 	}
 
+	db.SetMaxIdleConns(cfg.PoolMin)
+	db.SetMaxOpenConns(cfg.PoolMax)
+
 	r := mux.NewRouter()
 	r.HandleFunc("/query", query)
 
