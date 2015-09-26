@@ -34,7 +34,7 @@ func main() {
 	db.SetMaxOpenConns(cfg.PoolMax)
 
 	r := mux.NewRouter()
-	r.HandleFunc("/query", query)
+	r.HandleFunc("/query", query).Methods("POST")
 
 	// start HTTP server
 	fmt.Println("starting server on port:", cfg.Port)

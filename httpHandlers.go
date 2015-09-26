@@ -43,7 +43,7 @@ func query(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 	for rows.Next() {
-		m := make(rowData, 20)
+		m := make(rowData, 0)
 		err = rows.MapScan(m)
 		for k, v := range m {
 			if b, ok := v.([]byte); ok {
