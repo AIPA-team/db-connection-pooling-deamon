@@ -38,7 +38,7 @@ func main() {
 
 	// start HTTP server
 	fmt.Println("starting server on port:", cfg.Port)
-	if err := http.ListenAndServe(fmt.Sprintf(":%d", cfg.Port), r); err != nil {
+	if err := http.ListenAndServe(fmt.Sprintf("localhost:%d", cfg.Port), r); err != nil {
 		log.Fatal("error while starting http server:", err)
 	}
 }
