@@ -12,14 +12,36 @@ This is for sure not finished and production-ready code!
 
 ## How to use:
 
-- config config.yml
+- config config.yml (yaml syntax)  
+example:
+```
+port: 7000
+db:
+  dbName   : "pool"       #name of database
+  password : "test"       #password to database
+  host     : "localhost"  #IP address
+  user     : "postgres"   #username
+  poolMin  : 2            #minimum number of always hold connections in pool
+  poolMax  : 20           #maximum number of avalible connections in pool
+```
 - build and run the daemon
-- call it's `/query` url with json structured as follows:
+- call it with `POST` method to `localhost:7000/query` URL with json structured as follows:
 ```json
 {  
   "query": "SELECT * from test where name = $1 and lastname = $2",  
   "params": ["jack", "black"]  
 }
+```
+- it will return json with
+```json
+  [
+    {"columnName1": "columnValue", "columnName2": "columnValue"}
+    {"columnName1": "columnValue", "columnName2": "columnValue"}
+  ]
+```
+- or in case of error
+```json 
+{"err": "error message"} 
 ```
 
 ## TODO:
