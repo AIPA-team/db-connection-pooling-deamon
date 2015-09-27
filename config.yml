@@ -1,8 +1,8 @@
 port: 7000
 db:
-    dbName: "test"
+    dbName: "pool"
     password: "test"
     host: "localhost"
-    user: "test"
+    user: "postgres"
     poolMin: 2
     poolMax: 20
