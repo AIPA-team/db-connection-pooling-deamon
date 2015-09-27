@@ -13,6 +13,7 @@ func initTestENV() error {
 		loadTestCfg()
 	}
 	testDBconn()
+	deinitTestENV()
 	if err := createTable(); err != nil {
 		return err
 	}
