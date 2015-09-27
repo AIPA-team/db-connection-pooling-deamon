@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"net/http"
 )
@@ -22,8 +23,12 @@ func NewQuery() *Query {
 type rowData map[string]interface{}
 
 func query(w http.ResponseWriter, r *http.Request) {
-
 	defer Recover("query request")
+
+	if ok := checkIP(r.RemoteAddr); !ok {
+		JSONerr(w, errors.New("failed remoteAddr check!"))
+		return
+	}
 
 	var results []rowData
 
