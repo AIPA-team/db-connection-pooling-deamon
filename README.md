@@ -1,5 +1,6 @@
 [![GoDoc](https://godoc.org/github.com/AIPA-team/db-connection-pooling-deamon?status.svg)](https://godoc.org/github.com/AIPA-team/db-connection-pooling-deamon)
-[![Build Status](https://travis-ci.org/AIPA-team/db-connection-pooling-daemon.svg)](https://travis-ci.org/AIPA-team/db-connection-pooling-daemon)
+[![Build Status](https://drone.io/github.com/AIPA-team/db-connection-pooling-daemon/status.png)](https://drone.io/github.com/AIPA-team/db-connection-pooling-daemon/latest)
+[![Coverage Status](https://coveralls.io/repos/AIPA-team/db-connection-pooling-daemon/badge.svg?branch=master&service=github)](https://coveralls.io/github/AIPA-team/db-connection-pooling-daemon?branch=master)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 
 # db-connection-pooling-deamon
