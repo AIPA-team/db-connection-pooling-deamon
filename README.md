@@ -5,10 +5,10 @@
 
 # db-connection-pooling-deamon
 
-Is a daemon that allows usage of pooling database connections via RESTful API for languages/frameworks that dont have such capabilities.  
-Initially it supports postgres. MySQL and other databases are work in progress.
+Is a daemon that allows usage of pooling database connections via RESTful API for languages/frameworks that doesn't have such capabilities which leads to noticable increase of response time for each database query.
+Initially it supports postgres. MySQL and other databases are work in progress. MySQL should be supported in few days.
 
-This is for sure not finished and production-ready code!
+This is for sure not finished and production-ready code yet!
 
 ## How to use:
 
