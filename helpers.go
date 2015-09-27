@@ -5,7 +5,17 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"strings"
 )
+
+func checkIP(r string) bool {
+	addr := strings.Split(r, ":") //	[]string: wyłuskuję adres IP i port, z którego przyszło żądanie
+	srcIP := addr[0]
+	if srcIP != "127.0.0.1" {
+		return false
+	}
+	return true
+}
 
 // Recover is generic function that recovers from panic
 func Recover(functionName string) {
