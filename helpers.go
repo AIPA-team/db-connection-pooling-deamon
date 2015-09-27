@@ -8,7 +8,8 @@ import (
 	"strings"
 )
 
-func checkIP(r string) bool {
+// VerifyLocalhost checks if request comes from localhost
+func VerifyLocalhost(r string) bool {
 	addr := strings.Split(r, ":") //	[]string: wyłuskuję adres IP i port, z którego przyszło żądanie
 	srcIP := addr[0]
 	if srcIP != "127.0.0.1" {
