@@ -25,8 +25,8 @@ type rowData map[string]interface{}
 func query(w http.ResponseWriter, r *http.Request) {
 	defer Recover("query request")
 
-	if ok := checkIP(r.RemoteAddr); !ok {
-		JSONerr(w, errors.New("failed remoteAddr check!"))
+	if ok := VerifyLocalhost(r.RemoteAddr); !ok {
+		JSONerr(w, errors.New("failed remoteAddr check"))
 		return
 	}
 
