@@ -3,6 +3,6 @@ db:
     dbName: "test"
     password: "test"
     host: "localhost"
-    user: "test"
+    user: "postgres"
     poolMin: 2
     poolMax: 20

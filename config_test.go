@@ -13,7 +13,7 @@ func TestLoadConfig(t *testing.T) {
 	poolMax := 20
 	poolMin := 2
 	dbName := "test"
-	user := "test"
+	user := "postgres"
 	loadConfig()
 	if cfg.Port != port {
 		t.Errorf("expected port %d, got %d", port, cfg.Port)
