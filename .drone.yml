@@ -6,4 +6,6 @@ pipeline:
       - env
       - go get
       - go build
-
+  publish:
+      image: jarema/dupa
+      repo: jarema/dupa
