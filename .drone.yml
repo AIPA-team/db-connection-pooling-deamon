@@ -6,5 +6,4 @@ pipeline:
       - env
       - go get
       - go build
-      - go test
 
